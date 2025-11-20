@@ -48,9 +48,7 @@ RUN cd /usr/local/lib/node_modules/n8n && npm install n8n-nodes-shodan
 
 ### Search
 - **Query**: Search Shodan using the same query syntax as the website
-- **Count**: Get the total number of results that matched the query (doesn't consume query credits)
-- **Facets**: List all search facets that can be used for summary information
-- **Filters**: List all filters that can be used when searching
+- **Count**: Get the total number of results that matched the query 
 
 ### DNS
 - **Resolve**: Look up the IP address for the provided list of hostnames
@@ -141,18 +139,6 @@ You can combine multiple filters:
 apache country:US port:443 city:"New York"
 ```
 
-For a complete list of filters, use the **Search > Filters** operation or visit the [Shodan search filters page](https://www.shodan.io/search/filters).
-
-### API Credits
-
-Be aware that some operations consume API credits:
-
-- **Host Search (Query)**: Consumes 1 query credit if the search contains a filter or accessing results past the 1st page
-- **Domain Info**: Uses 1 query credit per lookup
-- **Host Count**: Does NOT consume query credits (use this for getting totals)
-
-Check your remaining credits using the Shodan API Info endpoint or in your account dashboard.
-
 ### Common Use Cases
 
 1. **Security Monitoring**: Monitor your IP ranges for exposed services
@@ -164,7 +150,6 @@ Check your remaining credits using the Shodan API Info endpoint or in your accou
 ### Tips
 
 - Use the **Count** operation first to check how many results you'll get before running a full search
-- Use **Facets** to get summary statistics (e.g., top countries, organizations) without downloading all results
 - For large result sets, use pagination with the **Page** parameter
 - Enable **Minify** to reduce response size for searches
 - Combine with other n8n nodes for automated security workflows
