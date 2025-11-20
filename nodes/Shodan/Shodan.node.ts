@@ -43,7 +43,7 @@ export class Shodan implements INodeType {
                         value: 'search',
                     },
                     {
-                        name: 'DN',
+                        name: 'DNS',
                         value: 'dns',
                     },
                     {
