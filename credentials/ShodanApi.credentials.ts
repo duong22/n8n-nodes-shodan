@@ -2,6 +2,7 @@ import {
 	IAuthenticateGeneric,
 	ICredentialType,
 	INodeProperties,
+    ICredentialTestRequest
 } from 'n8n-workflow';
 
 export class ShodanApi implements ICredentialType {
@@ -25,7 +26,16 @@ export class ShodanApi implements ICredentialType {
 		type: 'generic',
 		properties: {
 			qs: {
-				'key': '={{$credentials.apiKey}}'
+				key: '={{$credentials.apiKey}}'
+			}
+		},
+	};
+    test: ICredentialTestRequest = {
+		request: {
+			baseURL: 'https://api.shodan.io',
+			url: '/api-info',
+			qs: {
+				key: '={{$credentials.apiKey}}'
 			}
 		},
 	};
